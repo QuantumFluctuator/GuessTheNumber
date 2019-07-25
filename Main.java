@@ -4,13 +4,16 @@ import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
+		final int easy = 10, medium = 100, hard = 1000;
 		boolean wantsToQuit = false;
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Welcome to Guess the Number!\r\nMade by Evan Crabtree\r\n2019v1\r\n");
+		System.out.println("Welcome to Guess the Number!\r\nMade by Evan Crabtree\r\n2019 v1.1\r\n");
 		
 		while (!wantsToQuit) {
-			int x = (int)(10 * Math.random());
+			int difficulty = easy;
+			
+			int x = (int)(difficulty * Math.random());
 			int n, guesses = 5;
 			boolean won = false;
 			String input;
@@ -38,10 +41,12 @@ public class Main {
 				System.out.println("\t\tYou lose!");
 			}
 			
-			System.out.println("\t\tWould you like to play again? Y/N");
-			input = sc.nextLine();
-			if (input != "Y" && input != "y") {
+			System.out.print("\t\tWould you like to play again? Y/N: ");
+			input = sc.next();
+			
+			if (!input.contains("Y") && !input.contains("y")) {
 				wantsToQuit = true;
+				System.out.println();
 			}
 		}
 		
