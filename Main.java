@@ -11,10 +11,30 @@ public class Main {
 		System.out.println("Welcome to Guess the Number!\r\nMade by Evan Crabtree\r\n2019 v1.1\r\n");
 		
 		while (!wantsToQuit) {
-			int difficulty = easy;
+			int diff, difficulty;
+			System.out.print("(1) Easy\r\n(2) Medium\r\n(3) Hard\r\n(0) Custom\r\n\t\tChoose a difficulty: ");
+			diff = sc.nextInt();
+			
+			switch (diff) {
+			case 1:
+				difficulty = easy;
+				break;
+			case 2:
+				difficulty = medium;
+				break;
+			case 3:
+				difficulty = hard;
+				break;
+			case 0:
+				
+				//break;
+			default:
+				difficulty = medium;
+				break;
+			}
 			
 			int x = (int)(difficulty * Math.random());
-			int n, guesses = 5;
+			int n, guesses = (int)Math.sqrt(difficulty);
 			boolean won = false;
 			String input;
 			
