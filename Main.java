@@ -26,17 +26,25 @@ public class Main {
 				difficulty = hard;
 				break;
 			case 0:
-				
-				//break;
+				System.out.print("\t\tEnter a maximum number: ");
+				difficulty = sc.nextInt();
+				while (difficulty < 5) {
+					System.out.print("\t\tSorry, the number must be 5 or greater: ");
+					difficulty = sc.nextInt();
+				}
+				System.out.println();
+				break;
 			default:
 				difficulty = medium;
 				break;
 			}
 			
 			int x = (int)(difficulty * Math.random());
-			int n, guesses = (int)Math.sqrt(difficulty);
+			int n, guesses = (((int)Math.sqrt(difficulty))/4)+2;
 			boolean won = false;
 			String input;
+			
+			System.out.print("Number is between 0 and " + difficulty + "\r\n\r\n");
 			
 			while (guesses > 0 && !won) {
 				System.out.print("Guesses: " + guesses + "\t");
