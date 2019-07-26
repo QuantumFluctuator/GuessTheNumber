@@ -8,7 +8,7 @@ public class Main {
 		boolean wantsToQuit = false;
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Welcome to Guess the Number!\r\nMade by Evan Crabtree\r\n2019 v1.1\r\n");
+		System.out.println("Welcome to Guess the Number Java Edition!\r\nMade by Evan Crabtree\r\n2019 v1.1\r\n");
 		
 		while (!wantsToQuit) {
 			int diff, difficulty;
@@ -40,15 +40,14 @@ public class Main {
 			}
 			
 			int x = (int)(difficulty * Math.random());
-			int n, guesses = (((int)Math.sqrt(difficulty))/4)+2;
+			int n, guesses = ((int)Math.sqrt(difficulty/8))+2;
 			boolean won = false;
 			String input;
 			
 			System.out.print("Number is between 0 and " + difficulty + "\r\n\r\n");
 			
 			while (guesses > 0 && !won) {
-				System.out.print("Guesses: " + guesses + "\t");
-				System.out.print("Guess the number: ");
+				System.out.print("Guesses: " + guesses + "\tGuess the number: ");
 				
 				n = sc.nextInt();
 				guesses--;
@@ -62,6 +61,8 @@ public class Main {
 					System.out.println("\t\tYour guess is too low\r\n");
 				}
 			}
+			
+			System.out.println("The number: " + x);
 			
 			if (won) {
 				System.out.println("\t\tYou win!");
